@@ -3,10 +3,16 @@
 //by: Joshua Longhi
 $(document).ready(function(){
     function validate(){
+        var radio = $("input[name='server']:checked").val();
         var username = $("#username").val();
         var password = $("#password").val();
         var sudo = $("#sudo").val();
-        if(username.length == ''){
+        if(radio == undefined){
+            $("#message").html("Please select a server");
+            $("#message").css("color", "red");
+            return false;
+        }
+        else if(username.length == ''){
             $("#message").html("Username cannot be empty");
             $("#message").css("color", "red");
             return false;
@@ -74,19 +80,24 @@ $(document).ready(function(){
         var radio = JSON.parse($("input[name='server']:checked").val());
         var server = radio.server;
         var mac = radio.mac
-  
-        $.post("http://localhost:3000/boot", {server: server, mac: mac}, function(res){
-            console.log(res);
-            if(res.success){
-                $("#message").html(res.message);
-                $("#message").css("color", "green");
-            }
-            else{
-                $("#message").html(res.error.message);
-                $("#message").css("color", "red");
-            }
-            status();
-        })
+        if(mac != ""){
+            $.post("http://localhost:3000/boot", {server: server, mac: mac}, function(res){
+                console.log(res);
+                if(res.success){
+                    $("#message").html(res.message);
+                    $("#message").css("color", "green");
+                }
+                else{
+                    $("#message").html(res.error.message);
+                    $("#message").css("color", "red");
+                }
+                status();
+            })
+        }
+        else{
+            $("#message").html("Boot from lan is not enabled for this server");
+            $("#message").css("color", "red");
+        }
     })
     //checks status of server, sets status circle to green or red depending on result
     function status(){

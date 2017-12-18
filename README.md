@@ -38,4 +38,4 @@ Booting is performed using a wake from lan library that takes the mac adress, ip
 Booting comes with the restriction that the server needs to be configured for wake from lan and on the same lan as the web server.
 
 ## Status
-Under each server is a green or red circle displaying the current status of the server. This symbol is updated when page is loaded and when any button is pressed.
+Under each server is a green or red circle displaying the current status of the server. This symbol is updated when the page is loaded and when any button is pressed.
