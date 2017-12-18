@@ -9,7 +9,7 @@ Must have node.js installed
 2. Configure radio buttons in public/index.html with your servers information
    1. Change value - it is written using a JSON format "server" is your servers IP, "MAC" is your servers mac address
    2. Set label to your servers address
-   3. If adding more than 6 servers simply copy and past an existing circle and increment the ID of the circle div i.e server7
+   3. If adding more than 6 servers simply copy and paste an existing server and increment the ID of the circle div i.e server7
    4. If you do not want wake up on lan i.e remote booting set MAC to ""
 3. Change port number on line 86 of server.js to specify the port of the Express server - leave unchanged if port 3000 is OK
 4. run npm install to install dependencies
