@@ -39,7 +39,6 @@ $(document).ready(function(){
             var sudo = $("#sudo").val();
 
             $.post("http://localhost:3000/reboot", {server: server, username: username, password: password, sudo: sudo}, function(res){
-                console.log(res);
                 if(res.success){
                     $("#message").html(res.message);
                     $("#message").css("color", "green");
@@ -61,7 +60,6 @@ $(document).ready(function(){
             var password = $("#password").val();
             var sudo = $("#sudo").val();
 
-    
             $.post("http://localhost:3000/shutdown", {server: server, username: username, password: password, sudo: sudo}, function(res){
                 console.log(res);
                 if(res.success){
