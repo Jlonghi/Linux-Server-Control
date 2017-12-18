@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="index.css"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+        <title>Linux Server Control</title>
+    </head>
+    <body>
+        <div class="col-md-3 col-md-offset-5">
+        <h1>Linux Server Control</h1>
+        </div>
+        <div class="col-md-2 col-md-offset-5" >
+        <label>Server: </label>
+        <br>
+        <!-- To modify a server change the value of the radio buttons server to the ip address of the server, for wake up on lan add a mac address.
+             Then add a label for the radio button using the servers ip address. -->
+        <label><input type="radio" name="server" value='{"server": "127.0.1.1", "mac": "08:00:27:05:7e:84"}'> 127.0.1.1 <div class="circle" id="server1"></div></label>
+        <label><input type="radio" name="server" value='{"server": "129.0.1.1", "mac": "09:00:27:05:7e:84"}'> 129.0.1.1 <div class="circle" id="server2"></div></label>
+        <label><input type="radio" name="server" value='{"server": "126.0.1.1", "mac": "08:01:27:05:7e:84"}'> 126.0.1.1 <div class="circle" id="server3"></div></label>
+        <label><input type="radio" name="server" value='{"server": "125.0.1.1", "mac": "08:02:27:05:7e:84"}'> 125.0.1.1 <div class="circle" id="server4"></div></label>
+        <label><input type="radio" name="server" value='{"server": "123.0.1.1", "mac": "08:03:27:05:7e:84"}'> 123.0.1.1 <div class="circle" id="server5"></div></label>        
+        <label><input type="radio" name="server" value='{"server": "122.0.1.1", "mac": "08:04:27:05:7e:84"}'> 122.0.1.1 <div class="circle" id="server6"></div></label>        
+                
+        <br>
+        <label for="username">Username:</label>
+        <input class="form-control" type="text" id="username">
+        
+        <label for="password">Password:</label>                    
+        <input class="form-control" type="password" id="password">
+
+        <label for="sudo">Sudo Password:</label>
+        <input class="form-control" type="password" id="sudo">
+        </br>
+        <button class="btn" type="button" value="Reboot" id="reboot"> Reboot </button>
+        <button class="btn" type="button" value="Shutdown" id="shutdown"> Shutdown </button>
+        <button class="btn" type="button" value="Boot" id="boot"> Boot </button>
+        <br>
+        <p id="message"></p>
+        <p>Welcome to Linux Server Control</p>
+        <p>To boot a server simply select a server and press boot *note this is done using wake up on lan and thus the linux server must be on the same network as the web server</p>
+        <p>To reboot or shut down a server enter in your credentials and press reboot/shutdown</p>                 
+        </div>        
+    </body>
+
+</html>
