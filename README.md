@@ -6,7 +6,7 @@ Must have node.js installed
 
 ## How-To
 1. Clone repository
-2. Configure radio buttons in index.html with your servers information
+2. Configure radio buttons in public/index.html with your servers information
    1. Change value - it is written using a JSON format "server" is your servers IP, "MAC" is your servers mac address
    2. Set label to your servers address
    3. If adding more than 6 servers simply copy and past an existing circle and increment the ID of the circle div i.e server7
